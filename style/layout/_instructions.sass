@@ -1,0 +1,42 @@
+.instructions-section
+  ol
+    counter-reset: count
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    padding: 0
+    margin: .5rem
+    @include tablet-only
+      width: 50%
+    @include laptop-only
+      width: 30%
+    @include desktop-only
+      width: 20%
+    li
+      list-style: none
+      counter-increment: count
+      display: block
+      background-color: $grey
+      border-radius: 20px
+      @include card-shadow
+      @include font-weight("medium")
+      padding: 1.5rem 0
+      margin-bottom: .5rem
+      &::before
+        content: counter(count)
+        color: #fff
+        background-color: $primary-color
+        padding: .2rem .45rem
+        border-radius: 1rem
+        font-size: .9rem
+        position: relative
+        left: -.6rem
+      i
+        color: darken($grey, 50%)
+        font-size: 1.3rem
+        padding-right: 1rem
+        padding-left: .5rem
+      p
+        display: inline
+        font-size: .9rem
+      
