@@ -3,14 +3,24 @@
   flex-direction: column
   align-items: center
   width: 100%
+  background-color: $grey
+  padding-bottom: 3rem
+  h1
+    background-color: #fff
+    height: 100%
+    width: 100%
+    margin: 0
+    padding: 1rem
+    display: flex
+    justify-content: center
   &__location
     display: flex
     flex-flow: row nowrap
     justify-content: center
     width: 100%
     padding: 1rem
-    background-color: $grey
-    box-shadow: inset 3px 3px 3px darken($grey, 10%)
+    background-color: darken($grey, 5%)
+    box-shadow: inset 3px 3px 3px darken($grey, 15%)
     span
       border: 0
       background-color: transparent
@@ -20,7 +30,7 @@
     padding: 1.5rem
     text-align: center
     h2
-      font-weight: bold
+      @include font-weight("bold")
     p
       font-weight: 100
   &__explore-btn
@@ -30,4 +40,4 @@
     color: #fff
     padding: 1rem
     font-size: 1rem
-    font-weight: 600
+    @include font-weight("medium")
