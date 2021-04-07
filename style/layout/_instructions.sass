@@ -6,6 +6,12 @@
     justify-content: space-around
     padding: 0
     margin: .5rem
+    @include tablet-only
+      width: 50%
+    @include laptop-only
+      width: 30%
+    @include desktop-only
+      width: 20%
     li
       list-style: none
       counter-increment: count
@@ -29,6 +35,8 @@
         color: darken($grey, 50%)
         font-size: 1.3rem
         padding-right: 1rem
+        padding-left: .5rem
       p
         display: inline
+        font-size: .9rem
       

@@ -18,7 +18,7 @@
     flex-flow: row nowrap
     justify-content: center
     width: 100%
-    padding: 1rem
+    padding: 1rem 0
     background-color: darken($grey, 5%)
     box-shadow: inset 3px 3px 3px darken($grey, 15%)
     span
@@ -26,6 +26,8 @@
       background-color: transparent
       padding-left: .5rem
       font-size: 1rem
+      &:focus
+        outline: 0
   &__description
     padding: 1.5rem
     text-align: center
