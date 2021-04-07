@@ -92,7 +92,7 @@ button {
 }
 .restaurant-card__name {
   margin: 0 1rem;
-  font-weight: "bold";
+  font-weight: bold;
   grid-row-start: 2;
   justify-self: left;
   align-self: end;
@@ -174,7 +174,7 @@ button {
   text-align: center;
 }
 .page-header__description h2 {
-  font-weight: "bold";
+  font-weight: bold;
 }
 .page-header__description p {
   font-weight: 100;
@@ -247,7 +247,7 @@ button {
 .results-section {
   background-color: #f2f2f2;
   display: grid;
-  grid-template-column: 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 3rem;
   grid-gap: 1rem;
   grid-auto-rows: 15rem;
