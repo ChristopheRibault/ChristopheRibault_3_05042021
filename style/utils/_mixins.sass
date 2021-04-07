@@ -1,0 +1,17 @@
+@mixin card-shadow 
+  box-shadow: 1px 5px 5px darken($grey, 5%)
+
+@mixin font-weight($value)
+  font-weight: map-get($font-weights, $value)
+
+@mixin tablet-only
+  @media (min-width: 700px)
+    @content
+
+@mixin laptop-only
+  @media (min-width: 1024px)
+    @content
+
+@mixin desktop-only
+  @media (min-width: 1440px)
+    @content
