@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="https://kit.fontawesome.com/a9f5c40bda.js" crossorigin="anonymous"></script>
+  <title>Oh My Food</title>
+</head>
+<body>
+  <header class="restaurant-header">
+    <a href="/"><i class="fas fa-arrow-left"></i></a>
+    <h1><img src="../assets/images/logo/ohmyfood@2x.svg" alt="Oh My Food logo"></h1>
+  </header>
+  <main class="restaurant-main">
+    <img src="../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="à la française" class="restaurant-img">
+    <form class="menu">
+      <h2>&Agrave; la française</h2>
+      <i class="far fa-heart"></i>
+      <section class="menu-category">
+        <h4 class="menu-category__title">Entrées</h4>
+        <ul class="menu-category__list">
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Tartare de poulpe acidulé</p>
+                <p class="menu-item__description">Aux zests d'orange</p>
+                <div class="menu-item__price">25</div>
+              </div>
+              <input type="checkbox" name="entree" id="Tartare">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Velouté de légumes d'antan</pt>
+                <p class="menu-item__description">Carotte, panais, topinambour</p>
+                <div class="menu-item__price">35</div>
+              </div>
+              <input type="checkbox" name="entree" id="Veloute">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Soupe à l'oignon</p>
+                <p class="menu-item__description">Revisitée</p>
+                <div class="menu-item__price">20</div>
+              </div>
+              <input type="checkbox" name="entree" id="Soupe">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+        </ul>
+      </section>
+      <section class="menu-category">
+        <h4 class="menu-category__title">Plats</h4>
+        <ul class="menu-category__list">
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Coquilles Saint-Jacques</p>
+                <p class="menu-item__description">Accompagnées d'une purée de panais</p>
+                <div class="menu-item__price">40</div>
+              </div>
+              <input type="checkbox" name="plat" id="Coquilles">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Magret de canard</p>
+                <p class="menu-item__description">Et parmentier de pommes de terres</p>
+                <div class="menu-item__price">35</div>
+              </div>
+              <input type="checkbox" name="plat" id="Magret">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Pigeonneau d'Ille-et-Vilaine</p>
+                <p class="menu-item__description">Sur son lit de gnocchis aux légumes</p>
+                <div class="menu-item__price">44</div>
+              </div>
+              <input type="checkbox" name="plat" id="Pigeonneau">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+        </ul>
+      </section>
+      <section class="menu-category">
+        <h4 class="menu-category__title">Desserts</h4>
+        <ul class="menu-category__list">
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Pétales de violettes glacés</p>
+                <p class="menu-item__description">Et purée de noisettes</p>
+                <div class="menu-item__price">18</div>
+              </div>
+              <input type="checkbox" name="entree" id="Petales">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Fondant au chocolat</p>
+                <p class="menu-item__description">Revisité</p>
+                <div class="menu-item__price">22</div>
+              </div>
+              <input type="checkbox" name="entree" id="Fondant">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+          <li class="menu-item">
+            <label class="menu-item__label">
+              <div class="menu-item__details">
+                <p class="menu-item__name">Millefeuille croustillant</p>
+                <p class="menu-item__description">Myrtilles et pâte d'amande</p>
+                <div class="menu-item__price">23</div>
+              </div>
+              <input type="checkbox" name="entree" id="Millefeuille">
+              <i class="fas fa-check-circle menu-item__checkbox"></i>
+            </label>
+          </li>
+        </ul>
+      </section>
+      <button class="main-btn">Commander</button>
+    </form>
+  </main>
+  <footer class="page-footer">
+    <h5 class="page-footer__title">ohmyfood</h5>
+    <ul>
+      <li>
+        <i class="fas fa-utensils"></i>
+        <a href="/">Propser un restaurant</a>
+      </li>
+      <li>
+        <i class="fas fa-hands-helping"></i>
+        <a href="/">Devenir partenaire</a>
+      </li>
+      <li><a href="/">Mentions légales</a></li>
+      <li><a href="/">Contact</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

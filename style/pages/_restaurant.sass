@@ -1,0 +1,19 @@
+.menu
+  border-radius: 40px 40px 0 0
+  transform: translateY(-2.5rem)
+  background-color: $grey
+  padding: .8rem
+  display: grid
+  grid-template-columns: 1fr 60px
+  h2
+    @include align-in-grid(start, center)
+  i
+    @include align-in-grid
+    font-size: 1.5rem
+  section
+    grid-column: 1/span 2
+  button
+    grid-column: 1/span 2
+    width: 50%
+    @include align-in-grid
+    margin: 3rem
