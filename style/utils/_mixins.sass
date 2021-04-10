@@ -1,8 +1,24 @@
+// Style
+  
 @mixin card-shadow($h:1px, $v:5px, $b:5px, $c: darken($grey, 5%))
   box-shadow: $h $v $b $c
 
 @mixin font-weight($value)
   font-weight: map-get($font-weights, $value)
+
+// Display
+
+@mixin align-in-grid($v: center, $h: center)
+  align-self: $h
+  justify-self: $v
+
+@mixin flexbox($direction: row, $wrap: nowrap, $justify: center, $align: center)
+  display: flex
+  flex-flow: $direction $wrap
+  justify-content: $justify
+  align-items: $align
+
+// Complex elements
 
 @mixin menu-category-underline
   &::before
@@ -14,10 +30,6 @@
     height: 0px
     border-bottom: 3px solid $tertiary-color
 
-@mixin align-in-grid($v: center, $h: center)
-  align-self: $h
-  justify-self: $v
-
 @mixin erase-default-checkbox
   & input[type='checkbox']
     position: absolute
@@ -25,12 +37,6 @@
     opacity: 0
     height: 0
     width: 0
-
-@mixin flexbox($direction: row, $wrap: nowrap, $justify: center, $align: center)
-  display: flex
-  flex-flow: $direction $wrap
-  justify-content: $justify
-  align-items: $align
 
 @mixin custom-checkbox($state: hidden)
   @if ($state == hidden)
@@ -48,14 +54,14 @@
   background-color: $tertiary-color
   color: #fff
   cursor: pointer
-  display: flex
-  justify-content: center
-  align-items: center
-  transform-origin: 100% 50%
-  transition: all 600ms
+  @include flexbox
+  transform-origin: 100%
+  transition: all 600ms cubic-bezier(.32,0,.07,1)
   &::before
     font-size: 1.3rem
     transition: transform 500ms 100ms
+
+// Breakpoints
 
 @mixin tablet-only
   @media (min-width: 700px)

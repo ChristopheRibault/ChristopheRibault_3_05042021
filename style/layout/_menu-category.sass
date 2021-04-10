@@ -7,3 +7,6 @@
     @include menu-category-underline
   &__list
     padding: 0
+    @for $i from 1 through 3
+      & li:nth-child(#{$i})
+        animation: menu-item 400ms 300ms*$i backwards ease-out
