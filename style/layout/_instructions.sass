@@ -1,9 +1,7 @@
 .instructions-section
   ol
     counter-reset: count
-    display: flex
-    flex-direction: column
-    justify-content: space-around
+    @include flexbox(column, nowrap, space-around, strech)
     padding: 0
     margin: .5rem
     @include tablet-only

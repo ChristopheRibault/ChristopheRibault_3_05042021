@@ -1,3 +1,7 @@
+*
+  &:focus
+    outline: 0
+  
 body
   width: 100%
   min-height: 100%
@@ -13,14 +17,18 @@ h1
   margin-top: 1rem
   margin-bottom: 0
 
+h1, h2, h5
+  font-family: $font-titles
+  @include font-weight("normal")
+
 h3
   font-size: 1.5rem
-
-h1, h5
-  font-family: $font-titles
 
 ul
   list-style-type: none
 
 section
   padding: 1.5rem
+
+button
+  cursor: pointer

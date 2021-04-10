@@ -1,0 +1,13 @@
+.main-btn
+  border: 0
+  border-radius: 3rem
+  background: linear-gradient($secondary-color, $primary-color)
+  color: #fff
+  padding: 1rem
+  font-size: 1rem
+  @include font-weight("medium")
+  transition: all 400ms
+  box-shadow: 2px 4px 4px darken($grey, 20%)
+  &:hover
+    box-shadow: 3px 5px 5px darken($grey, 40%)
+    background: linear-gradient(lighten($secondary-color, 5%), lighten($primary-color, 5%))
