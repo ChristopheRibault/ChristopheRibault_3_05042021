@@ -4,6 +4,7 @@
   border-radius: 10px
   margin-bottom: .8rem
   max-width: 400px
+  // animation: menu-item 400ms 100ms backwards ease-out
   &__label
     @include flexbox
     cursor: pointer
@@ -17,13 +18,13 @@
   &__name
     grid-row: 1
     grid-column: 1
-    @include align-in-grid(center start)
+    @include align-in-grid(start, center)
     @include font-weight("bold")
     font-size: 1rem
   &__description
     grid-row: 2
     grid-column: 1
-    @include align-in-grid(center start)
+    @include align-in-grid(start, center)
     @include font-weight("thin")
     font-size: .8rem
   &__price
