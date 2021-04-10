@@ -197,8 +197,18 @@ button {
 
 .restaurant-img {
   width: 100%;
-  height: 50vw;
+  height: 200px;
   object-fit: cover;
+}
+@media (min-width: 700px) {
+  .restaurant-img {
+    height: 300px;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-img {
+    height: 600px;
+  }
 }
 
 .menu-item {
@@ -206,7 +216,6 @@ button {
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 0.8rem;
-  max-width: 400px;
 }
 .menu-item__label {
   display: flex;
@@ -228,6 +237,12 @@ button {
   display: grid;
   grid-template-columns: 1fr 40px;
   grid-template-rows: repeat(2, 20px);
+}
+.menu-item__details p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .menu-item__name {
   grid-row: 1;
@@ -515,6 +530,11 @@ button {
 .menu-category__list li:nth-child(3) {
   animation: menu-item 400ms 900ms backwards ease-out;
 }
+@media (min-width: 700px) {
+  .menu-category__list {
+    width: 500px;
+  }
+}
 
 .page-footer {
   background-color: #404040;
@@ -552,13 +572,27 @@ main {
   display: grid;
   grid-template-columns: 1fr 60px;
 }
+@media (min-width: 700px) {
+  .menu {
+    justify-items: center;
+  }
+}
 .menu h2 {
+  grid-column: 1/span2;
+  grid-row: 1;
   align-self: center;
   justify-self: start;
+}
+@media (min-width: 700px) {
+  .menu h2 {
+    justify-self: center;
+  }
 }
 .menu i {
   align-self: center;
   justify-self: center;
+  grid-column: 2;
+  grid-row: 1;
   font-size: 1.5rem;
 }
 .menu section {
@@ -570,6 +604,9 @@ main {
   align-self: center;
   justify-self: center;
   margin: 3rem;
+}
+.menu__order-btn {
+  max-width: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,3 +10,5 @@
     @for $i from 1 through 3
       & li:nth-child(#{$i})
         animation: menu-item 400ms 300ms*$i backwards ease-out
+    @include tablet-only
+      width: 500px
