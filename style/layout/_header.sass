@@ -1,7 +1,5 @@
 .page-header
-  display: flex
-  flex-direction: column
-  align-items: center
+  @include flexbox(column)
   width: 100%
   background-color: $grey
   padding-bottom: 3rem
@@ -11,12 +9,9 @@
     width: 100%
     margin: 0
     padding: 1rem
-    display: flex
-    justify-content: center
+    @include flexbox
   &__location
-    display: flex
-    flex-flow: row nowrap
-    justify-content: center
+    @include flexbox
     width: 100%
     padding: 1rem 0
     background-color: darken($grey, 5%)
@@ -29,15 +24,21 @@
   &__description
     padding: 1.5rem
     text-align: center
-    h2
+    strong
+      font-size: 1.5em
       @include font-weight("bold")
     p
       font-weight: 100
-  &__explore-btn
-    border: 0
-    border-radius: 3rem
-    background: linear-gradient($secondary-color, $primary-color)
-    color: #fff
-    padding: 1rem
-    font-size: 1rem
-    @include font-weight("medium")
+
+.restaurant-header
+  display: grid
+  grid-template-columns: 60px 1fr
+  grid-template-rows: 60px
+  a
+    grid-column: 1
+    grid-row: 1
+    @include align-in-grid
+  h1
+    grid-column: 1/span 2
+    grid-row: 1
+    @include align-in-grid

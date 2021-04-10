@@ -1,8 +1,61 @@
-@mixin card-shadow 
-  box-shadow: 1px 5px 5px darken($grey, 5%)
+@mixin card-shadow($h:1px, $v:5px, $b:5px, $c: darken($grey, 5%))
+  box-shadow: $h $v $b $c
 
 @mixin font-weight($value)
   font-weight: map-get($font-weights, $value)
+
+@mixin menu-category-underline
+  &::before
+    content: ""
+    position: absolute
+    left: 0
+    bottom: -.5rem
+    width: 40px
+    height: 0px
+    border-bottom: 3px solid $tertiary-color
+
+@mixin align-in-grid($v: center, $h: center)
+  align-self: $h
+  justify-self: $v
+
+@mixin erase-default-checkbox
+  & input[type='checkbox']
+    position: absolute
+    cursor: pointer
+    opacity: 0
+    height: 0
+    width: 0
+
+@mixin flexbox($direction: row, $wrap: nowrap, $justify: center, $align: center)
+  display: flex
+  flex-flow: $direction $wrap
+  justify-content: $justify
+  align-items: $align
+
+@mixin custom-checkbox($state: hidden)
+  @if ($state == hidden)
+    transform: scaleX(0)
+    width: 0
+    &::before
+      transform: rotate(-360deg)
+  @else
+    width: 55px
+    transform: scaleX(1)
+    &::before
+      transform: rotate(0deg)
+  height: 60px
+  border-radius: 0 10px 10px 0
+  background-color: $tertiary-color
+  color: #fff
+  cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
+  transform-origin: 100% 50%
+  transition: all 600ms
+  &::before
+    font-size: 1.3rem
+    transition: transform 500ms 100ms
 
 @mixin tablet-only
   @media (min-width: 700px)
