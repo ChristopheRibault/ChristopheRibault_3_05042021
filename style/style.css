@@ -235,6 +235,7 @@ button {
   height: 40px;
 }
 .menu-item__details p {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -273,9 +274,9 @@ button {
   height: 60px;
   background-color: #99E2D0;
   color: #fff;
+
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
   align-items: center;
 }
 .menu-item__checkbox::before {
