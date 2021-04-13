@@ -47,10 +47,10 @@
 }
 @keyframes home-page {
   from {
-    transform: translateY(9999px);
+    transform: translateX(100vw);
   }
   to {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 @keyframes menu-item {
@@ -76,6 +76,7 @@ body {
   max-width: 1440px;
   margin: auto;
   font-family: Roboto, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -213,128 +214,88 @@ button {
 
 .menu-item {
   box-shadow: 1px 5px 5px #e5e5e5;
-  background-color: #fff;
   border-radius: 10px;
-  margin-bottom: 0.8rem;
+  background-color: #fff;
+  height: 60px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 .menu-item__label {
+  cursor: pointer;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  justify-content: space-between;
 }
-.menu-item__label input[type=checkbox] {
-  position: absolute;
-  cursor: pointer;
-  opacity: 0;
-  height: 0;
-  width: 0;
+.menu-item input[type=checkbox] {
+  display: none;
 }
 .menu-item__details {
-  flex-grow: 1;
+  min-width: 0;
   padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 40px;
-  grid-template-rows: repeat(2, 20px);
+  height: 40px;
 }
 .menu-item__details p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
+  margin: 0;
 }
 .menu-item__name {
-  grid-row: 1;
-  grid-column: 1;
-  align-self: center;
-  justify-self: start;
   font-weight: bold;
   font-size: 1rem;
 }
 .menu-item__description {
-  grid-row: 2;
-  grid-column: 1;
-  align-self: center;
-  justify-self: start;
   font-weight: 100;
   font-size: 0.8rem;
 }
+.menu-item__anim-block {
+  flex-shrink: 0;
+  width: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateX(50px);
+  transition: all 600ms cubic-bezier(0.32, 0, 0.07, 1);
+}
 .menu-item__price {
-  grid-row: 2;
-  grid-column: 2;
-  align-self: center;
-  justify-self: center;
+  width: 50%;
   font-size: 0.8rem;
+  text-align: center;
+  align-self: flex-end;
+  padding: 10px 0;
 }
 .menu-item__price::after {
   content: "€";
 }
 .menu-item__checkbox {
-  transform: scaleX(0);
-  width: 0;
+  width: 50%;
   height: 60px;
-  border-radius: 0 10px 10px 0;
   background-color: #99E2D0;
   color: #fff;
-  cursor: pointer;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  transform-origin: 100%;
-  transition: all 600ms cubic-bezier(0.32, 0, 0.07, 1);
+}
+.menu-item__checkbox::before {
+  font-size: 1.3rem;
 }
 .menu-item__checkbox::before {
   transform: rotate(-360deg);
-}
-.menu-item__checkbox::before {
-  font-size: 1.3rem;
   transition: transform 500ms 100ms;
 }
-.menu-item:hover .menu-item__checkbox {
-  width: 55px;
-  transform: scaleX(1);
-  height: 60px;
-  border-radius: 0 10px 10px 0;
-  background-color: #99E2D0;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  transform-origin: 100%;
-  transition: all 600ms cubic-bezier(0.32, 0, 0.07, 1);
+.menu-item:hover .menu-item__anim-block {
+  transform: translateX(0);
 }
 .menu-item:hover .menu-item__checkbox::before {
-  transform: rotate(0deg);
+  transform: rotate(0);
 }
-.menu-item:hover .menu-item__checkbox::before {
-  font-size: 1.3rem;
-  transition: transform 500ms 100ms;
+.menu-item input[type=checkbox]:checked + .menu-item__anim-block {
+  transform: translateX(0);
 }
-.menu-item input[type=checkbox]:checked + .menu-item__checkbox {
-  width: 55px;
-  transform: scaleX(1);
-  height: 60px;
-  border-radius: 0 10px 10px 0;
-  background-color: #99E2D0;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  transform-origin: 100%;
-  transition: all 600ms cubic-bezier(0.32, 0, 0.07, 1);
-}
-.menu-item input[type=checkbox]:checked + .menu-item__checkbox::before {
-  transform: rotate(0deg);
-}
-.menu-item input[type=checkbox]:checked + .menu-item__checkbox::before {
-  font-size: 1.3rem;
-  transition: transform 500ms 100ms;
+.menu-item input[type=checkbox]:checked + .menu-item__anim-block .menu-item__checkbox::before {
+  transform: rotate(0);
 }
 
 .fa-spinner {
@@ -503,6 +464,7 @@ button {
 
 .menu-category {
   padding: 0;
+  max-width: 100%;
 }
 .menu-category__title {
   font-weight: 200;
@@ -519,6 +481,7 @@ button {
   border-bottom: 3px solid #99E2D0;
 }
 .menu-category__list {
+  width: 100%;
   padding: 0;
 }
 .menu-category__list li:nth-child(1) {
@@ -588,7 +551,7 @@ main {
     justify-self: center;
   }
 }
-.menu i {
+.menu__like {
   align-self: center;
   justify-self: center;
   grid-column: 2;

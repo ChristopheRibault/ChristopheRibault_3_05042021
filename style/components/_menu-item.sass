@@ -1,45 +1,68 @@
+// Container
 .menu-item
   @include card-shadow
-  background-color: #fff
   border-radius: 10px
-  margin-bottom: .8rem
+  background-color: #fff
+  height: $card-height
+  margin-bottom: 20px
+  overflow: hidden
   &__label
-    @include flexbox
     cursor: pointer
-    @include erase-default-checkbox
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+  & input[type='checkbox']
+    display: none
+
+  // Text part
   &__details
-    flex-grow: 1
-    padding: 10px
-    display: grid
-    grid-template-columns: 1fr 40px
-    grid-template-rows: repeat(2, 20px)
+    min-width: 0
+    padding: $card-padding
+    height: $card-height - $card-padding * 2
     p
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
-      width: 100%
+      margin: 0
   &__name
-    grid-row: 1
-    grid-column: 1
-    @include align-in-grid(start, center)
     @include font-weight("bold")
     font-size: 1rem
   &__description
-    grid-row: 2
-    grid-column: 1
-    @include align-in-grid(start, center)
     @include font-weight("thin")
     font-size: .8rem
+
+  // Moving part (price and checkbox)
+  &__anim-block
+    flex-shrink: 0
+    width: $anim-block-width
+    @include flexbox(row, nowrap, space-between, center)
+    transform: translateX($anim-block-width/2)
+    transition: all 600ms cubic-bezier(.32,0,.07,1)
   &__price
-    grid-row: 2
-    grid-column: 2
-    @include align-in-grid
+    width: 50%
     font-size: .8rem
+    text-align: center
+    align-self: flex-end
+    padding: $card-padding 0
     &::after
       content: "€"
   &__checkbox
-    @include custom-checkbox(hidden)
+    width: 50%
+    @include custom-checkbox
+    &::before
+      transform: rotate(-360deg)
+      transition: transform 500ms 100ms
+
+  // Animation
+    //On hover
+  &:hover &__anim-block
+    transform: translateX(0)
   &:hover &__checkbox
-    @include custom-checkbox(visible)
-  & input[type='checkbox']:checked + &__checkbox
-    @include custom-checkbox(visible)
+    &::before
+      transform: rotate(0)
+    // On checked
+  & input[type='checkbox']:checked + &__anim-block
+    transform: translateX(0)
+  & input[type='checkbox']:checked + &__anim-block &__checkbox
+    &::before
+      transform: rotate(0)
