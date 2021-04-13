@@ -31,25 +31,13 @@
     height: 0px
     border-bottom: 3px solid $tertiary-color
 
-@mixin custom-checkbox($state: hidden)
-  // @if ($state == hidden)
-  //   transform: translateX(55px)
-  //   &::before
-  //     transform: rotate(-360deg)
-  // @else
-  //   transform: translateX(0)
-  //   &::before
-  //     transform: rotate(0deg)
-
-  width: 55px
-  height: 60px
+@mixin custom-checkbox
+  height: $card-height
   background-color: $tertiary-color
   color: #fff
-  cursor: pointer
   @include flexbox
   &::before
     font-size: 1.3rem
-    transition: transform 500ms 100ms
 
 // Breakpoints
 
