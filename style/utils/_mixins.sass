@@ -21,6 +21,7 @@
 // Complex elements
 
 @mixin menu-category-underline
+  position: relative
   &::before
     content: ""
     position: absolute
@@ -30,33 +31,22 @@
     height: 0px
     border-bottom: 3px solid $tertiary-color
 
-@mixin erase-default-checkbox
-  & input[type='checkbox']
-    position: absolute
-    cursor: pointer
-    opacity: 0
-    height: 0
-    width: 0
-
 @mixin custom-checkbox($state: hidden)
-  @if ($state == hidden)
-    transform: scaleX(0)
-    width: 0
-    &::before
-      transform: rotate(-360deg)
-  @else
-    width: 55px
-    transform: scaleX(1)
-    &::before
-      transform: rotate(0deg)
+  // @if ($state == hidden)
+  //   transform: translateX(55px)
+  //   &::before
+  //     transform: rotate(-360deg)
+  // @else
+  //   transform: translateX(0)
+  //   &::before
+  //     transform: rotate(0deg)
+
+  width: 55px
   height: 60px
-  border-radius: 0 10px 10px 0
   background-color: $tertiary-color
   color: #fff
   cursor: pointer
   @include flexbox
-  transform-origin: 100%
-  transition: all 600ms cubic-bezier(.32,0,.07,1)
   &::before
     font-size: 1.3rem
     transition: transform 500ms 100ms
