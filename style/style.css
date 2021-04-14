@@ -286,6 +286,12 @@ button {
   transform: rotate(-360deg);
   transition: transform 500ms 100ms;
 }
+.menu-item .fas {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
 .menu-item:hover .menu-item__anim-block {
   transform: translateX(0);
 }
@@ -493,6 +499,9 @@ button {
 }
 .menu-category__list li:nth-child(3) {
   animation: menu-item 400ms 900ms backwards ease-out;
+}
+.menu-category__list li:nth-child(4) {
+  animation: menu-item 400ms 1200ms backwards ease-out;
 }
 @media (min-width: 700px) {
   .menu-category__list {
