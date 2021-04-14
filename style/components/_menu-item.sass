@@ -54,6 +54,9 @@
     &::before
       transform: rotate(-360deg)
       transition: transform 500ms 100ms
+  // Overwrite default inline-block
+  .fas
+    @include flexbox
 
   // Animation
     //On hover
