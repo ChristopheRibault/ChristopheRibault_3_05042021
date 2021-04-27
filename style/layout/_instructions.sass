@@ -1,4 +1,5 @@
 .instructions-section
+  min-height: 20vh
   ol
     counter-reset: count
     @include flexbox(column, nowrap, space-around, normal)
@@ -7,9 +8,9 @@
     @include tablet-only
       width: 50%
     @include laptop-only
-      width: 30%
-    @include desktop-only
-      width: 20%
+      width: 100%
+      @include flexbox(row, nowrap, space-evenly(''))
+
     li
       list-style: none
       counter-increment: count
@@ -20,6 +21,8 @@
       @include font-weight("medium")
       padding: 1.5rem 0
       margin-bottom: .5rem
+      @include laptop-only
+        padding: 1.5rem
       &::before
         content: counter(count)
         color: #fff

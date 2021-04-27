@@ -4,17 +4,18 @@
   background-color: #fff
   display: grid
   grid-template-columns: 1fr 80px
-  grid-template-rows: 7fr 1.5fr 1.5fr
+  grid-template-rows: 70% 15% 15%
   height: 100%
   transition: all 400ms
+  overflow: hidden
   &:hover
     transform: scale(1.05)
     @include card-shadow(2px, 7px, 7px)
   &__img
+    display: block
     width: 100%
     height: 100%
     object-fit: cover
-    border-radius: 20px 20px 0 0
     grid-column: 1 / span 2
     grid-row-start: 1
   &__name

@@ -1,23 +1,25 @@
 .results-section
   background-color: $grey
-  display: grid
-  grid-template-columns: 1fr
-  grid-template-rows: 3rem
-  grid-gap: 1rem
-  grid-auto-rows: 15rem
+  min-height: 35vh
+  &__container
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 3rem
+    grid-gap: 1rem
+    grid-auto-rows: 15rem
 
-  @include tablet-only
-    grid-template-columns: repeat(2, 1fr)
-    h3
-      grid-column: 1 / span 2
+    @include tablet-only
+      grid-template-columns: repeat(2, 1fr)
+      h3
+        grid-column: 1 / span 2
 
-  @include laptop-only
-    grid-template-columns: repeat(3, 1fr)
-    h3
-      grid-column: 1 / span 3
-        
-  @include desktop-only
-    grid-template-columns: repeat(4, 1fr)
-    h3
-      grid-column: 1 / span 4
+    @include laptop-only
+      grid-template-columns: repeat(3, 1fr)
+      h3
+        grid-column: 1 / span 3
+          
+    @include desktop-only
+      grid-template-columns: repeat(4, 1fr)
+      h3
+        grid-column: 1 / span 4
         
