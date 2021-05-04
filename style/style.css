@@ -177,11 +177,29 @@ button {
   padding: 0.5rem;
 }
 
-.fa-heart:hover:before {
-  background: linear-gradient(#9356DC, #FF79DA);
+.heart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.heart__element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.heart__element--filled {
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(0);
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  font-weight: 900 !important;
+  transition: transform 1s;
+}
+.heart:hover .heart__element--filled {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .main-btn {
@@ -426,6 +444,12 @@ button {
   .instructions-section ol li {
     padding: 1.5rem;
   }
+}
+.instructions-section ol li:hover {
+  background-color: #e4d5f6;
+}
+.instructions-section ol li:hover > i {
+  color: #9356DC;
 }
 .instructions-section ol li::before {
   content: counter(count);
