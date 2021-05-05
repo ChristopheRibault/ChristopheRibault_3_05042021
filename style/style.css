@@ -177,11 +177,29 @@ button {
   padding: 0.5rem;
 }
 
-.fa-heart:hover:before {
-  background: linear-gradient(#9356DC, #FF79DA);
+.heart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.heart__element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.heart__element--filled {
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(0);
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  font-weight: 900 !important;
+  transition: transform 1s;
+}
+.heart:hover .heart__element--filled {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .main-btn {
@@ -248,21 +266,21 @@ button {
 }
 .menu-item__name {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .menu-item__description {
   font-weight: 100;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .menu-item__anim-block {
   flex-shrink: 0;
   width: 100px;
+  margin-right: -50px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  transform: translateX(50px);
-  transition: all 600ms cubic-bezier(0.32, 0, 0.07, 1);
+  transition: margin 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 .menu-item__price {
   width: 50%;
@@ -298,13 +316,13 @@ button {
   justify-content: center;
 }
 .menu-item:hover .menu-item__anim-block {
-  transform: translateX(0);
+  margin-right: 0;
 }
 .menu-item:hover .menu-item__checkbox::before {
   transform: rotate(0);
 }
 .menu-item input[type=checkbox]:checked + .menu-item__anim-block {
-  transform: translateX(0);
+  margin-right: 0;
 }
 .menu-item input[type=checkbox]:checked + .menu-item__anim-block .menu-item__checkbox::before {
   transform: rotate(0);
@@ -426,6 +444,12 @@ button {
   .instructions-section ol li {
     padding: 1.5rem;
   }
+}
+.instructions-section ol li:hover {
+  background-color: #e4d5f6;
+}
+.instructions-section ol li:hover > i {
+  color: #9356DC;
 }
 .instructions-section ol li::before {
   content: counter(count);
