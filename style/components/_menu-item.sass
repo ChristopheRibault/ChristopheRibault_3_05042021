@@ -28,18 +28,18 @@
       margin: 0
   &__name
     @include font-weight("bold")
-    font-size: 1rem
+    font-size: 1.2rem
   &__description
     @include font-weight("thin")
-    font-size: .8rem
+    font-size: 1rem
 
   // Moving part (price and checkbox)
   &__anim-block
     flex-shrink: 0
     width: $anim-block-width
+    margin-right: -$anim-block-width/2
     @include flexbox(row, nowrap, space-between, center)
-    transform: translateX($anim-block-width/2)
-    transition: all 600ms cubic-bezier(.32,0,.07,1)
+    transition: margin 600ms cubic-bezier(.32,0,.07,1)
   &__price
     width: 50%
     font-size: .8rem
@@ -61,13 +61,13 @@
   // Animation
     //On hover
   &:hover &__anim-block
-    transform: translateX(0)
+    margin-right: 0
   &:hover &__checkbox
     &::before
       transform: rotate(0)
     // On checked
   & input[type='checkbox']:checked + &__anim-block
-    transform: translateX(0)
+    margin-right: 0
   & input[type='checkbox']:checked + &__anim-block &__checkbox
     &::before
       transform: rotate(0)

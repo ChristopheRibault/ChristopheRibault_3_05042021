@@ -266,21 +266,21 @@ button {
 }
 .menu-item__name {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .menu-item__description {
   font-weight: 100;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .menu-item__anim-block {
   flex-shrink: 0;
   width: 100px;
+  margin-right: -50px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  transform: translateX(50px);
-  transition: all 600ms cubic-bezier(0.32, 0, 0.07, 1);
+  transition: margin 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 .menu-item__price {
   width: 50%;
@@ -316,13 +316,13 @@ button {
   justify-content: center;
 }
 .menu-item:hover .menu-item__anim-block {
-  transform: translateX(0);
+  margin-right: 0;
 }
 .menu-item:hover .menu-item__checkbox::before {
   transform: rotate(0);
 }
 .menu-item input[type=checkbox]:checked + .menu-item__anim-block {
-  transform: translateX(0);
+  margin-right: 0;
 }
 .menu-item input[type=checkbox]:checked + .menu-item__anim-block .menu-item__checkbox::before {
   transform: rotate(0);
